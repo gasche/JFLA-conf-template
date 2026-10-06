@@ -1,0 +1,18 @@
+[package]
+name = "jfla-conf-template"
+version = "1.0.0"
+entrypoint = "jfla.typ"
+authors = ["Paul Adam <@pauladam94>"]
+license = "MIT"
+description = "Template for the JFLA conference."
+repository = "https://github.com/pauladam94/JFLA-conf-template"
+keywords = ["template", "article", "jfla"]
+categories = ["template", "article"]
+disciplines = ["computer-science", "mathematics"]
+compiler = "0.15.1"
+exclude = ["examples/"]
+
+[template]
+path = "template"
+entrypoint = "main.typ"
+# thumbnail = "thumbnail.png"
