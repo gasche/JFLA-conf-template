@@ -137,9 +137,15 @@
   // > * \@mparswitchfalse
   // > * \@reversemarginfalse
   // > * (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+  // this value comes from the output above
+  #let margin = 101.17755pt
+  // these two values have been determined by manual search
+  #let topmargin = 12pt
+  #let bottommargin = -4pt
   #set page(
     numbering: "1",
-    margin: 101.17755pt,
+    margin: (x: margin, top: margin + topmargin, bottom: margin + bottommargin),
     header: context [
       #set text(style: (if lang == "fr" { "italic" } else { "normal" }), 9pt)
       #if here().page() != 1 {
