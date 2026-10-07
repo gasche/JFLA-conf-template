@@ -1,3 +1,5 @@
+#import "@preview/bullseye:0.1.0" as bullseye
+
 #import "@preview/theorion:0.6.0": (
   conjecture, corollary, definition, example, lemma, proof, property, remark,
   theorem,
