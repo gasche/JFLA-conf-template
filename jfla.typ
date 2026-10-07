@@ -37,8 +37,7 @@
     Francophones des Langages Applicatifs_
   ] else if lang == "en" [
     #set text(9pt)
-    // todo remplacer ça par la version anglaise
-    JFLA #todo #(1989 + jfla-numbering) – #jfla-numbering#super[th] _Journées
+    JFLA #(1989 + jfla-numbering) – #jfla-numbering#super[th] _Journées
     Francophones des Langages Applicatifs_
   ]
 
