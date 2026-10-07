@@ -73,10 +73,8 @@
   #set underline(offset: 0.1em)
   #set text(10pt, lang: lang, font: "New Computer Modern", weight: "regular")
   #set par(
-    leading: 0.55em,
+    leading: 0.51em,
     spacing: 0.55em,
-    first-line-indent: 1em,
-    justify: true,
   )
   #set par.line(
     numbering: if review-mode { n => text(red)[#n] } else { none },
