@@ -217,16 +217,16 @@
   }
 
   #show std.title: set align(center)
-  #show std.title: set text(20pt)
+  #show std.title: set text(20pt, weight: "medium")
 
   // Spacing before the Title
-  #v(30mm)
+  #v(14mm - topmargin)
 
   // Title
   #std.title()
 
   // Spacing between Title and Authors
-  #v(3.3mm)
+  #v(2.5mm)
 
   // Authors
   #[
@@ -242,7 +242,7 @@
   ]
 
   // Spacing between Authors and Affiliation
-  #v(1mm)
+  #v(2.5mm)
 
   // Affliation
   #[
@@ -257,10 +257,15 @@
   ]
 
   // Spacing between Affiliation and abstract
-  #v(18mm)
+  #v(15.5mm)
+
+  #set par(
+    first-line-indent: (amount: 1em, all: true),
+    justify: true,
+  )
 
   // Abstract
-  #box(inset: (x: 9mm), abstract)
+  #box(inset: (x: 8.76mm), abstract)
 
   #content
 ]
