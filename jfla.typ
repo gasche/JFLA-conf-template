@@ -32,13 +32,13 @@
 
   // Computation of stuff for the template
   #let jfla-footer = if lang == "fr" [
-    #set text(9pt)
-    JFLA #(1989 + jfla-numbering) – #jfla-numbering#super[es] _Journées
-    Francophones des Langages Applicatifs_
+    #set text(style: "italic", 9pt)
+    JFLA #(1989 + jfla-numbering) – #jfla-numbering#super[es] Journées
+    Francophones des Langages Applicatifs
   ] else if lang == "en" [
     #set text(9pt)
-    JFLA #(1989 + jfla-numbering) – #jfla-numbering#super[th] _Journées
-    Francophones des Langages Applicatifs_
+    JFLA #(1989 + jfla-numbering) – #jfla-numbering#super[th] Journées
+    Francophones des Langages Applicatifs
   ]
 
   #if running-title == none {
@@ -115,7 +115,7 @@
     numbering: "1",
     margin: 101.17755pt,
     header: context [
-      #set text(8pt)
+      #set text(style: (if lang == "fr" { "italic" } else { "normal" }), 9pt)
       #if here().page() != 1 {
         stack(
           dir: ltr,
