@@ -168,22 +168,52 @@
       context counter(page).display("1"),
     ),
   )
+
   #set heading(numbering: "1.1.1 ")
-  #show heading: set block(above: 1.4em, below: 1em)
   #show heading.where(level: 1): set heading(supplement: "Section")
-  #show heading.where(level: 1): set text(14pt, weight: "semibold")
-  #show heading.where(level: 2): set text(12pt, weight: "semibold")
+
+  #let block-heading(above: none, below: none, it) = {
+    if above.weak != none { v(weak: true, above.weak) }
+    block(above: above.strong, below: below.strong, sticky: true, {
+      if it.numbering != none {
+        counter(heading).display(it.numbering)
+        h(1pt)
+      }
+      it.body
+    })
+    if below.weak != none { v(weak: true, below.weak) }
+  }
+
+  #show heading.where(level: 1): bullseye.show-target(paged: it => {
+    set text(14pt, weight: "semibold")
+    block-heading(
+      above: (weak: none, strong: 1.6em),
+      below: (weak: 1em, strong: 0.5em),
+      it
+    )
+  })
+
+  #show heading.where(level: 2): bullseye.show-target(paged: it => {
+    set text(12pt, weight: "semibold")
+    block-heading(
+      above: (weak: none, strong: 1.4em),
+      below: (weak: 1em, strong: 0.5em),
+      it
+    )
+  })
+
+  #show heading.where(level: 3): set block(above: 1.6em, below: 1em)
 
   #show heading.where(level: 4): it => {
-    [\ ]
+    v(1em)
     set text(weight: "semibold")
-    it.body + [.] + h(2pt)
+    h(-1em) + it.body + h(2pt)
   }
 
   #show heading.where(level: 5): it => {
-    [\ ]
+    v(1em)
     set text(weight: "semibold")
-    h(1em) + it.body + h(2pt)
+    it.body + h(2pt)
   }
 
   #show std.title: set align(center)
