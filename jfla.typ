@@ -107,6 +107,19 @@
   #show heading.where(level: 1): set heading(supplement: "Section")
   #show heading.where(level: 1): set text(14pt, weight: "semibold")
   #show heading.where(level: 2): set text(12pt, weight: "semibold")
+
+  #show heading.where(level: 4): it => {
+    [\ ]
+    set text(weight: "semibold")
+    it.body + [.] + h(2pt)
+  }
+
+  #show heading.where(level: 5): it => {
+    [\ ]
+    set text(weight: "semibold")
+    h(1em) + it.body + h(2pt)
+  }
+
   #show std.title: set align(center)
   #show std.title: set text(20pt)
 
