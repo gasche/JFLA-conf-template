@@ -79,8 +79,28 @@
   #set par.line(
     numbering: if review-mode { n => text(red)[#n] } else { none },
   )
-  #set terms(hanging-indent: 0em, separator: [*.*#h(1em)])
   #set cite(style: "alphanumeric")
+
+
+  #let list-marker = if lang == "fr" { [---] } else { (scale(66%)[●], [‣], [–]) }
+  #set list(marker: list-marker)
+  #show list.where(tight: true): set list(indent: 1em)
+  #show list.where(tight: false): set block(above: 1.5em, below: 1.5em)
+  #show list.where(tight: false): set list(indent: 1.2em, spacing: 1.2em)
+
+  #set enum(
+    indent: 1em,
+    numbering: "1.",
+  )
+  #show enum.where(tight: false): set enum(spacing: 1.2em)
+
+  #show terms: set block(above: 1.5em, below: 1.5em)
+  #set terms(
+    indent: 0em,
+    spacing: 1.2em,
+    hanging-indent: 2em,
+    separator: [#h(0.5em)],
+  )
 
   // geometry reference: found in the .log output of a jflart.sty document:
   // > *geometry* detected driver: pdftex
