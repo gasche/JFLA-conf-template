@@ -77,9 +77,43 @@
   )
   #set terms(hanging-indent: 0em, separator: [*.*#h(1em)])
   #set cite(style: "alphanumeric")
+
+  // geometry reference: found in the .log output of a jflart.sty document:
+  // > *geometry* detected driver: pdftex
+  // > *geometry* verbose mode - [ preamble ] result:
+  // > * driver: pdftex
+  // > * paper: <default>
+  // > * layout: <same size as paper>
+  // > * layoutoffset:(h,v)=(0.0pt,0.0pt)
+  // > * modes:
+  // > * h-part:(L,W,R)=(101.17755pt, 395.15283pt, 101.17755pt)
+  // > * v-part:(T,H,B)=(101.17755pt, 642.69183pt, 101.17755pt)
+  // > * \paperwidth=597.50793pt
+  // > * \paperheight=845.04694pt
+  // > * \textwidth=395.15283pt
+  // > * \textheight=642.69183pt
+  // > * \oddsidemargin=28.90756pt
+  // > * \evensidemargin=28.90756pt
+  // > * \topmargin=-4.09244pt
+  // > * \headheight=15.0pt
+  // > * \headsep=18.0pt
+  // > * \topskip=10.0pt
+  // > * \footskip=42.0pt
+  // > * \marginparwidth=74.68849pt
+  // > * \marginparsep=12.8401pt
+  // > * \columnsep=10.0pt
+  // > * \skip\footins=9.0pt plus 4.0pt minus 2.0pt
+  // > * \hoffset=0.0pt
+  // > * \voffset=0.0pt
+  // > * \mag=1000
+  // > * \@twocolumnfalse
+  // > * \@twosidefalse
+  // > * \@mparswitchfalse
+  // > * \@reversemarginfalse
+  // > * (1in=72.27pt=25.4mm, 1cm=28.453pt)
   #set page(
     numbering: "1",
-    margin: (x: 35mm, y: 20mm),
+    margin: 101.17755pt,
     header: context [
       #set text(8pt)
       #if here().page() != 1 {
