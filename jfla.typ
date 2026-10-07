@@ -81,6 +81,8 @@
   )
   #set cite(style: "alphanumeric")
 
+  #show quote: set block(above: 1.5em, below: 1.5em)
+  #show quote: set pad(x: 2em)
 
   #let list-marker = if lang == "fr" { [---] } else { (scale(66%)[●], [‣], [–]) }
   #set list(marker: list-marker)
