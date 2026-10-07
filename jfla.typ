@@ -60,7 +60,6 @@
     *#it.supplement #context { it.counter.display(it.numbering) }.*
     #it.body
   ]
-  #show figure: it => place(top+center, float:true, it)
 
   #set table(stroke: none, inset: 2.2pt, column-gutter: 1em)
 

@@ -113,10 +113,12 @@ La classe~`jflart.cls` charge un certain nombre de paquets par défaut.
 
 == Figures
 
-#figure(
-  image("jfla.jpg", width: 80%),
-  caption: [Les JFLA 2002, photographie par Maxence Guesdon],
-) <fig:bienbelle>
+#place(top+center, float:true)[
+  #figure(
+    image("jfla.jpg", width: 80%),
+    caption: [Les JFLA 2002, photographie par Maxence Guesdon],
+  ) <fig:bienbelle>
+]
 
 L'usage de~`includegraphics` avec une option~`width` permet une
 utilisation facile d'images, comme illustré par la @fig:bienbelle.
