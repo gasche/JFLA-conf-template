@@ -34,9 +34,9 @@
 
   // Computation of stuff for the template
   #let jfla-footer = if lang == "fr" [
-    #set text(style: "italic", 9pt)
-    JFLA #(1989 + jfla-numbering) – #jfla-numbering#super[es] Journées
-    Francophones des Langages Applicatifs
+    #set text(9pt)
+    JFLA #(1989 + jfla-numbering) – #jfla-numbering#super[es] _Journées
+    Francophones des Langages Applicatifs_
   ] else if lang == "en" [
     #set text(9pt)
     JFLA #(1989 + jfla-numbering) – #jfla-numbering#super[th] Journées
@@ -83,7 +83,9 @@
   #show quote: set block(above: 1.5em, below: 1.5em)
   #show quote: set pad(x: 2em)
 
-  #let list-marker = if lang == "fr" { [---] } else { (scale(66%)[●], [‣], [–]) }
+  #let list-marker = if lang == "fr" { [---] } else {
+    (scale(66%)[●], [‣], [–])
+  }
   #set list(marker: list-marker)
   #show list.where(tight: true): set list(indent: 1em)
   #show list.where(tight: false): set block(above: 1.5em, below: 1.5em)
@@ -188,7 +190,7 @@
     block-heading(
       above: (weak: none, strong: 1.6em),
       below: (weak: 1em, strong: 0.5em),
-      it
+      it,
     )
   })
 
@@ -197,7 +199,7 @@
     block-heading(
       above: (weak: none, strong: 1.4em),
       below: (weak: 1em, strong: 0.5em),
-      it
+      it,
     )
   })
 

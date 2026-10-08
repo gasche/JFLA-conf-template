@@ -2,7 +2,7 @@
 name = "jfla-conf-template"
 version = "1.0.0"
 entrypoint = "jfla.typ"
-authors = ["Paul Adam <@pauladam94>"]
+authors = ["Paul Adam <@pauladam94>", "Gabriel Sherer <@gasche>"]
 license = "MIT"
 description = "Template for the JFLA conference."
 repository = "https://github.com/pauladam94/JFLA-conf-template"
@@ -15,4 +15,4 @@ exclude = ["examples/"]
 [template]
 path = "template"
 entrypoint = "main.typ"
-# thumbnail = "thumbnail.png"
+thumbnail = "thumbnail.png"
