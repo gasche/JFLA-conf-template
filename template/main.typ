@@ -8,14 +8,9 @@
       affiliation: "ENS Rennes, Rennes, 35000, France",
     ),
     (
-      name: "Alan Schmitt",
-      running-name: "Alan S.",
-      affiliation: "INRIA, Rennes, 35000, France",
-    ),
-    (
-      name: "Martin Quinson",
-      running-name: "Martin Q.",
-      affiliation: "IRISA, Rennes, 35000, France",
+      name: "Gabriel Sherer",
+      running-name: "Gabriel S.",
+      affiliation: "IRIF, Paris, 75013, France",
     ),
   ),
   abstract: [
