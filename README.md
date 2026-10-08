@@ -4,6 +4,7 @@ Typst template for the JFLA (journées français des languages applicatifs) conf
 
 This package has not (yet) been published to Typst Universe. So to use it you have to copy paste the `jfla.typ` file.
 
+# Minimal Example
 
 Here is a minimal example assuming the `jfla.typ' file is in the same directory
 as the example : 
@@ -39,7 +40,6 @@ as the example :
 
 #lorem(300)
 
-
 = Related Work
 
 In the @section:introduction we talked about the problem at hand.
@@ -49,7 +49,8 @@ In the @section:introduction we talked about the problem at hand.
 
 #lorem(2000)
 #figure(
-    
+  box(width: 200pt, height: 100pt, stroke: 1pt),
+  caption: [Some very pretty empty black box]    
 )
 
 = Other Important Section
@@ -79,7 +80,25 @@ In the @section:introduction we talked about the problem at hand.
 // Here we assume that the bibliography is present in the file "bib.bib"
 // and in the same directory as this file
 #bibliography("bib.bib")
-
-
-
 ```
+
+# How to build Typst document
+
+The general way to compile a file in Typst is to run this command :
+```
+typst compile main.typ main.pdf
+```
+
+(`main.pdf` is not necessary here because the file is named `main.typ`)
+
+Typst cannot use files outside of the working directory which is by default the
+directory of the file you are compiling. To change this default run this :
+```
+typst c main.typ main.pdf --root other/root/directory/
+```
+
+(you can write `c` for `compile`)
+
+<!-- Fonts cannot be embedded inside of Typst packages. Typst by default look at -->
+<!-- system fonts. We are using specific 2 fonts : -->
+<!-- - "New Computer Modern" which is embedded inside the typst binary so this should not pose any probrem -->
