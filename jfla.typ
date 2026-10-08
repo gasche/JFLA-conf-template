@@ -76,7 +76,7 @@
     spacing: 0.55em,
   )
   #set par.line(
-    numbering: if review-mode { n => text(red)[#n] } else { none },
+    numbering: if review-mode { n => text(8pt, red)[#n] } else { none },
   )
   #set cite(style: "alphanumeric")
 
