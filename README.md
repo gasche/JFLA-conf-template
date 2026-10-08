@@ -22,7 +22,7 @@ as the example :
     (
       name: "SecondAuthorName Withonename Andasecond",
       running-name: "SecondAuthorName W. A.",
-      affiliation: "IRIF, Paris, France",
+      affiliation: ("INRIA Paris, France", "IRIF, Université Paris Cité, France",),
     ),
   ),
   abstract: [

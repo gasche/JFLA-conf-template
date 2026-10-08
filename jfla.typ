@@ -14,6 +14,7 @@
   /// - name         : complete name of the authors
   /// - running-name : abbreviated name for the header
   /// - affiliation  : complete affiliation of the authors for the title
+  //                   (string or array of strings)
   authors: none,
   /// Abstract of the article displayed on the first page
   abstract: none,
@@ -229,15 +230,33 @@
   // Spacing between Title and Authors
   #v(2.5mm)
 
+  // from (A, B, A, C) to (A: 0, B: 1, C: 2)
+  #let reindex(array) = {
+    array.fold((:), (index, v) => {
+      if v not in index { index.insert(v, index.len()) }
+      index
+    })
+  }
+
+  // normalize affiliations to always be arrays
+  #let ensure-array(x) = if type(x) == array { x } else { (x,) }
+  #let authors = authors.map((auth) => { auth.affiliations = ensure-array(auth.affiliation); auth })
+
+  #let affiliation-index = {
+    let affiliations = authors.map(auth => auth.affiliations).flatten()
+    reindex(affiliations)
+  }
+
   // Authors
   #[
     #set align(center)
     #set text(14pt)
-
     #(
       authors
-        .enumerate()
-        .map(((i, info)) => [#info.name#super[#(i + 1)]])
+        .map(auth => {
+          let affil-indices = auth.affiliations.map(aff => affiliation-index.at(aff) + 1)
+          auth.name + super(affil-indices.map(i => [#i]).join(","))
+        })
         .join(", ", last: " et ")
     )
   ]
@@ -249,12 +268,9 @@
   #[
     #set align(center)
     #set text(9pt)
-    #(
-      authors
-        .enumerate()
-        .map(((i, info)) => [#super[#(i + 1)]#info.affiliation \ ])
-        .join()
-    )
+    #for (affil, i) in affiliation-index {
+      [#super[#(i + 1)]#affil \ ]
+    }
   ]
 
   // Spacing between Affiliation and abstract
